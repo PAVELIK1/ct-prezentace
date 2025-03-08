@@ -107,6 +107,33 @@ th {
     color: #0905fc;
     
 }
+ .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 125%; /* Posunutí nad prvek */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+   
     </style>
 </head>
 <body>
@@ -122,7 +149,7 @@ th {
             <th>Nevýhody</th>
         </tr>
         <tr>
-            <td>Rychlé vyšetření</td>
+            <div class="tooltip"><td>Rychlé vyšetření</td><div class="tooltip-text">Toto je tooltip s textem</div></div>
             <td>Vysoké dávky rentgenového záření</td>
         </tr>
         <tr>
